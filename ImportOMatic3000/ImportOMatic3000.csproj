@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.7.1.1" />
+    <PackageReference Include="ExcelDataReader" Version="3.3.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.4.0" />
+    <PackageReference Include="YamlDotNet.NetCore" Version="1.0.0" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="set classpath=$(ProjectDir)ExpressionParser;%classpath%&#xD;&#xA;echo %classpath%&#xD;&#xA;antlr4 -Dlanguage=CSharp ExpressionParser\OutputExpression.g4 -visitor -no-listener" />
+  </Target>
+
+</Project>

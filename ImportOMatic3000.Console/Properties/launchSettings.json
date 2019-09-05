@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ImportOMatic3000.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\richa\\OneDrive\\ImportOMatic3000\\SpecXL.yaml\" \"C:\\Users\\richa\\Documents\\Spreadsheet.xlsx\""
+    }
+  }
+}
