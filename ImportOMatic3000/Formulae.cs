@@ -88,6 +88,7 @@ namespace ImportOMatic3000
         }
 
         public static bool LookupContainsKey(Dictionary<string, string> lookup, string key) => lookup.ContainsKey(key);
+
         public static string Lookup(Dictionary<string, string> lookup, string key)
         {
             if (lookup.TryGetValue(key, out var value))

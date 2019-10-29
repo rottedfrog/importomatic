@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using YamlDotNet.RepresentationModel;
 
 namespace ImportOMatic3000.Specs
 {
     class FileTypeVisitor : YamlNodeVisitorBase
     {
-        static Dictionary<string, IFileType> DefaultFileTypes;
-
         Dictionary<string, IFileType> _fileTypes;
 
         public FileTypeVisitor(Dictionary<string, IFileType> fileTypes)
