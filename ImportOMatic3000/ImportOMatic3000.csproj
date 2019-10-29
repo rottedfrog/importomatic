@@ -12,7 +12,8 @@
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="set classpath=$(ProjectDir)ExpressionParser;%classpath%&#xD;&#xA;echo %classpath%&#xD;&#xA;antlr4 -Dlanguage=CSharp ExpressionParser\OutputExpression.g4 -visitor -no-listener" />
+    <Exec Condition="'$(OS)' == 'Windows_NT'" Command="set classpath=$(ProjectDir)ExpressionParser;%classpath%&#xD;&#xA;echo %classpath%&#xD;&#xA;antlr4 -Dlanguage=CSharp ExpressionParser\OutputExpression.g4 -visitor -no-listener" />
+    <Exec Condition="'$(OS)' == 'Unix'" Command="CLASSPATH=&quot;.:$(SolutionDir)antlr-4.7.1-complete.jar:$(ProjectDir)ExpressionParser:$CLASSPATH&quot; java -jar $(SolutionDir)antlr-4.7.1-complete.jar -Dlanguage=CSharp ExpressionParser/OutputExpression.g4 -visitor -no-listener" />
   </Target>
 
 </Project>
