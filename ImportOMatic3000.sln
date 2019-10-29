@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportOMatic3000.Console", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportOMatic3000.Test", "ImportOMatic3000.Test\ImportOMatic3000.Test.csproj", "{B27B4E17-456E-4F1E-AD46-B70D6C858E3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportOMatic.Console.Full", "ImportOMatic.Console.Full\ImportOMatic.Console.Full.csproj", "{98995669-7406-4112-A6CE-EC138ECA61D9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
