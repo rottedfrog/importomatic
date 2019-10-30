@@ -23,7 +23,7 @@ namespace ImportOMatic3000.Console
                     var listener = new CsvOutputListener(output);
                     importer.Import(data, listener);
                     listener.Task.Wait();
-                    var errors = listener.Errors;
+                    errorCount = listener.Errors;
                 }
                 if (errorCount > 0)
                 {

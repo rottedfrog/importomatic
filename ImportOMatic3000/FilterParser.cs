@@ -50,7 +50,6 @@ namespace ImportOMatic3000
 
         private IEnumerable<(string name, string[] parameters)> ParseFilterString(string filterString)
         {
-            var filters = new List<(string name, string[] parameters)>();
             var state = State.Begin;
             var tokenStart = 0;
             var tokens = new List<string>();
@@ -121,7 +120,6 @@ namespace ImportOMatic3000
             string key = null;
             try
             {
-                var filters = new List<IStringFilter>();
                 var parseResult = ParseFilterString(filterString);
                 var filterTokens = parseResult.First();
                 IInitialFieldValue initialValue;
