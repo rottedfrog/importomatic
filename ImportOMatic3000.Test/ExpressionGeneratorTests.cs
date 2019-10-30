@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Xunit;
@@ -25,6 +27,11 @@ namespace ImportOMatic3000.Test
 
     public class ExpressionGeneratorTests
     {
+        public ExpressionGeneratorTests()
+        {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+        }
+
         [Fact]
         public void NumberIsAValidExpression()
         {

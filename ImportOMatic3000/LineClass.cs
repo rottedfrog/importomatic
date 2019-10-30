@@ -15,10 +15,10 @@ namespace ImportOMatic3000
         public bool OutputLine { get; set; }
         public List<ExtractedValue> ValuesToExtract { get; set; }
 
-        public bool IsMatch(IRow row, string section) => (string.IsNullOrEmpty(MatchingSection) || MatchingSection.Equals(section, StringComparison.CurrentCultureIgnoreCase)) &&
+        public bool IsMatch(IRow row, string section) => (string.IsNullOrEmpty(MatchingSection) || MatchingSection.Equals(section, StringComparison.InvariantCultureIgnoreCase)) &&
                                                          (MatchingSheets == null || MatchingSheets.IsMatch(row.Sheet ?? "")) &&
                                                          MatchExpressions.All(expr => expr.IsMatch(row.Fields));
-        
+
         public void ExtractValues(IDictionary<string, string> fieldValues, IRow row)
         {
             try
