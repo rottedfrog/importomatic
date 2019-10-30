@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from ExpressionParser\OutputExpression.g4 by ANTLR 4.7.1
+// Generated from ExpressionParser/OutputExpression.g4 by ANTLR 4.7.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -29,7 +29,8 @@ using IToken = Antlr4.Runtime.IToken;
 /// </summary>
 /// <typeparam name="Result">The return type of the visit operation.</typeparam>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
-interface IOutputExpressionVisitor<Result> : IParseTreeVisitor<Result> {
+[System.CLSCompliant(false)]
+public interface IOutputExpressionVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
 	/// Visit a parse tree produced by the <c>IfExpression</c>
 	/// labeled alternative in <see cref="OutputExpressionParser.expr"/>.

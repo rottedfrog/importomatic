@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from ExpressionParser\OutputExpression.g4 by ANTLR 4.7.1
+// Generated from ExpressionParser/OutputExpression.g4 by ANTLR 4.7.1
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -31,7 +31,8 @@ using Antlr4.Runtime.Tree;
 using DFA = Antlr4.Runtime.Dfa.DFA;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
-partial class OutputExpressionParser : Parser {
+[System.CLSCompliant(false)]
+public partial class OutputExpressionParser : Parser {
 	protected static DFA[] decisionToDFA;
 	protected static PredictionContextCache sharedContextCache = new PredictionContextCache();
 	public const int
