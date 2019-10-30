@@ -74,23 +74,16 @@ namespace ImportOMatic3000
             if (parametersInfo.Length < paramCount)
             { throw new IncorrectParameterCountException(method.Name, parametersInfo.Length, paramCount); }
             var parameterExpressions = new Expression[parametersInfo.Length];
-            for (int i = 0; i < paramCount; i++)
+            for (int i = 0; i < parametersInfo.Length; i++)
             {
-                parameterExpressions[i] =  context.GetChild((i + 1)* 2).Accept(this);
+                if (i < paramCount)
+                { parameterExpressions[i] = context.GetChild((i + 1) * 2).Accept(this); }
+                else
+                { parameterExpressions[i] = Expression.Constant(defaults[i - minParams]); }
 
                 if (TypeConverters.TryGetValue((parameterExpressions[i].Type, parametersInfo[i].ParameterType), out var convertFunc))
                 { parameterExpressions[i] = convertFunc(parameterExpressions[i]); }
                 ThrowIfNotExpectedType(parameterExpressions[i].Type, parametersInfo[i].ParameterType, functionName);
-            }
-            if (paramCount < parametersInfo.Length)
-            {
-                for(int i = paramCount; i < parametersInfo.Length; ++i)
-                {
-                    parameterExpressions[i] = Expression.Constant(defaults[i - minParams]);
-                    if (TypeConverters.TryGetValue((parameterExpressions[i].Type, parametersInfo[i].ParameterType), out var convertFunc))
-                    { parameterExpressions[i] = convertFunc(parameterExpressions[i]); }
-                    ThrowIfNotExpectedType(parameterExpressions[i].Type, parametersInfo[i].ParameterType, functionName);
-                }
             }
             return Expression.Call(null, method, parameterExpressions);
         }

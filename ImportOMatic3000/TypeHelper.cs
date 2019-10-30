@@ -63,7 +63,7 @@ namespace ImportOMatic3000
             { return "text"; }
             if (t == typeof(DateTime))
             { return "date"; }
-            if (t == typeof(Decimal))
+            if (t == typeof(decimal))
             { return "number"; }
             if (t == typeof(bool))
             { return "boolean"; }
