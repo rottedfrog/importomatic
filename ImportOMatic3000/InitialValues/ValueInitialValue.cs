@@ -8,6 +8,6 @@
 
         public string GetValue(IRow row) => _value;
 
-        public string GetSourceField(IRow row) => $"Sheet \"{row.Sheet}\"";
+        public string GetSourceField(IRow row) => $"sheet \"{row.Sheet}\"";
     }
 }
