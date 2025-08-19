@@ -24,6 +24,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         java-version: '21'
+        distribution: oracle
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
